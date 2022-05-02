@@ -1,3 +1,4 @@
-test.py
+test*.py
 __pycache__/*
 datos.csv
+db.py
