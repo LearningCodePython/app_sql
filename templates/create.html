@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>API CCONTEL</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='estilos1.css') }}" type="text/css"> 
+    </head>
+    <body>
+        <div>
+            {% include "layout.html" %}
+        </div>
+        <div class="center_box">
+            <div class="create_form">
+                <form method="post" action="/store" enctype="multipart/form-data"> 
+                    <H1>Detalles del Sitio </H1> <br>
+                    <p> Nombre del Sitio </p><input type="text" name="nombre" id="nombre">
+                    <p> Dirección IP del Host </p><input type="text" name ="host" id="host">
+                    <p> Usuario API </p><input type="text" name="user" id="user">
+                    <p> Contraseña </p><input type="text" name="password" id="password">
+            <div class="boton_1">
+                <input type="submit" value="Enviar">
+            </div>
+                </form>
+            </div>
+        </div>            
+    </body>
+</html>
