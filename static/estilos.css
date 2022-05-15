@@ -1,0 +1,11 @@
+body {
+    background-image: url("img/fondo_6.jpg");
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+    background-size: cover;
+  }
+
+#menu {
+  display: inline;
+}

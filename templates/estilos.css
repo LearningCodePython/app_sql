@@ -1,0 +1,8 @@
+h1 {
+  color: blue;
+}
+body {
+  background-image: url("../img/main_grid.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+}

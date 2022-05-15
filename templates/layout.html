@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="../img/main_grid.jpg">
+</head>
+<body>
+  <div class="container">
+    <div call="row">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/system">System</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Extensiones
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/todas">Todas</a>
+                  <a class="dropdown-item" href="/noregister">No Registradas</a>
+                  <div class="dropdown-divider"></div>
+                  <div class="container">
+                    <form class="form-inline" method="post" action="/consult">
+                      <input class="form-control" type="search" placeholder="Search" aria-label="Extensión.." name="Extension">
+                      <button type="submit" class="btn btn-primary">Buscar</button>
+                    </form>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Lineas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/trunk_list">Troncales</a>
+                  <a class="dropdown-item" href="/routein">Route In</a>
+                  <a class="dropdown-item" href="/routeout">Route Out</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Mas cosas aquí</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Hotel
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/checkout">Check-Out</a>
+                  <a class="dropdown-item" href="/add_alarm">Añadir alarma</a>
+                  <a class="dropdown-item" href="/check_alarm">Consulta de alarma</a>
+                  <a class="dropdown-item" href="/set_alarm">Modificar alarma</a>
+                  <a class="dropdown-item" href="/del_alarm">Borrar alarma</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Mas cosas aquí</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Call report                  
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Llamadas</a> 
+              </li>
+            </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>
