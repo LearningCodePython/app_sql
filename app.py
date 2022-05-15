@@ -1,25 +1,53 @@
 # @ By Cristo Emiliano Hernandez Daria
 #
 from flask import Flask, render_template, request
-# import extlist
-
+from flaskext.mysql import MySQL
+import hashlib
 
 app = Flask(__name__)
 
+mysql = MySQL()
+app.config['MYSQL_DATABASE_HOST']='localhost'
+app.config['MYSQL_DATABASE_USER']='root'
+app.config['MYSQL_DATABASE_PASSWORD']='ptoorp'
+app.config['MYSQL_DATABASE_DB']='datos'
+mysql.init_app(app)
+
 @app.route('/')
 def index():
-    # extlist._extlist_()
-    # datosjson = extlist.cadena_json
     return render_template('index.html')
-'''    
+   
 @app.route('/todas')
 def todas():
     import extlist
-    extlist._extlist_()
+    extlist.extlist()
     datosjson = extlist.cadena_json
     return render_template('extlist.html', datos=datosjson['extlist'])
 
+@app.route('/create')
+def create():
+    return render_template('create.html')
 
+@app.route('/store', methods=['POST'])
+def store():
+    _nombre=request.form["nombre"]
+    _host=request.form['host']
+    _user=request.form['user']
+    _password=request.form['password']
+    
+    p_encode = _password.encode()
+    h = hashlib.new("md5", p_encode)
+    passwd = (h.hexdigest())
+
+    datos = (_nombre, _host, _user, passwd, )
+    sql = "INSERT INTO site (name, host, user, password) VALUES (%s, %s, %s, %s)"
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(sql, datos)
+    conn.commit()
+    
+    return render_template('create.html')
+'''
 @app.route('/noregister')
 def noregister():
     from settingext import _unavailable_, reset_value, no_register
@@ -77,7 +105,6 @@ def system():
     infosystem = _pbxinfo_() #Ejecuto la función y la almaceno en una variable
     return render_template('system.html', datos = infosystem['deviceinfo'])
 '''
-
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8800, debug=True)
  

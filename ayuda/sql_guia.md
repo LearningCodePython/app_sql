@@ -1,7 +1,7 @@
 # Python MySQL
 
 ## Create Connection   
-Start by creating a connection to the database.
+Comience por crear una conexión a la base de datos.
 
 Use the username and password from your MySQL database:   
 
