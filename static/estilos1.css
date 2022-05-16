@@ -144,3 +144,24 @@ footer p {
   padding: 7px;
   text-align: center;  
 }
+
+table {
+  margin: 35px;
+  margin-left: 220px;
+  margin-right: 220px;
+  width: 80%;
+  border-collapse: collapse;
+  text-align: left;
+}
+thead {
+  padding: 7px;
+  background-color: black;
+  color: white;
+  width: 30%;
+  
+}
+
+td {
+  border: solid 1px;
+  padding: 10px;
+}

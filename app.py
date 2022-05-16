@@ -47,6 +47,20 @@ def store():
     conn.commit()
     
     return render_template('create.html')
+
+@app.route('/site_list')
+def site_list():
+    
+    sql = "SELECT * FROM site"
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    
+    lista=cursor.fetchall()
+    conn.commit()
+
+    return render_template('site_list.html', lista=lista )
+
 '''
 @app.route('/noregister')
 def noregister():

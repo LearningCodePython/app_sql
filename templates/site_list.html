@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for ('static',filename='estilos1.css') }}">
+<body>
+    {% include "layout.html" %}
+    <div class="">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nonbre del Sitio</th>
+                    <th>Host</th>
+                    <th>Usuario</th>
+                    <th>Password</th>
+                    <th>Modificar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lista in lista %}
+                <tr>
+                <td>{{lista [1]}}</td>
+                <td>{{lista [2]}}</td>
+                <td>{{lista [3]}}</td>
+                <td>{{lista [4]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</head>
+</html>
