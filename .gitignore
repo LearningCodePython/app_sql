@@ -3,3 +3,4 @@ __pycache__/*
 datos.csv
 db.py
 test_table/*
+ayuda/inicio.md

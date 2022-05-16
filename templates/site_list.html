@@ -8,20 +8,27 @@
         <table>
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Nonbre del Sitio</th>
                     <th>Host</th>
                     <th>Usuario</th>
                     <th>Password</th>
-                    <th>Modificar</th>
+                    <th id="mod">Modificar</th>
                 </tr>
             </thead>
             <tbody>
                 {% for lista in lista %}
                 <tr>
+                <td>{{lista [0]}}</td>
                 <td>{{lista [1]}}</td>
                 <td>{{lista [2]}}</td>
                 <td>{{lista [3]}}</td>
                 <td>{{lista [4]}}</td>
+                <td id="mod">
+                    <a href="/editar/{{lista [0]}}">Editar</a>
+                    <a href="/conectar/{{lista [0]}}">Conectar</a>
+                    <a href="/borrar/{{lista [0]}}" >Eliminar</a>
+                </td>
                 </tr>
                 {% endfor %}
             </tbody>

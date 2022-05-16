@@ -158,10 +158,16 @@ thead {
   background-color: black;
   color: white;
   width: 30%;
+  text-align: center;
   
 }
 
 td {
   border: solid 1px;
   padding: 10px;
+  text-align: right;
+}
+
+#mod {
+  text-align: center;
 }

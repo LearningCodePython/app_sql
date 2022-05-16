@@ -1,10 +1,13 @@
 # @ By Cristo Emiliano Hernandez Daria
 #
-from flask import Flask, render_template, request
+from django.shortcuts import redirect
+from flask import Flask, render_template, request, redirect
 from flaskext.mysql import MySQL
 import hashlib
 
 app = Flask(__name__)
+
+#### Conexion a la vase de datos ####
 
 mysql = MySQL()
 app.config['MYSQL_DATABASE_HOST']='localhost'
@@ -13,10 +16,14 @@ app.config['MYSQL_DATABASE_PASSWORD']='ptoorp'
 app.config['MYSQL_DATABASE_DB']='datos'
 mysql.init_app(app)
 
+#### Renderizado de index.html ####
 @app.route('/')
 def index():
     return render_template('index.html')
    
+#### Render de extlist.html que muestra una lista de 
+#### Extensiones 
+
 @app.route('/todas')
 def todas():
     import extlist
@@ -24,9 +31,12 @@ def todas():
     datosjson = extlist.cadena_json
     return render_template('extlist.html', datos=datosjson['extlist'])
 
+#### Render de create.html para crear nuevos sitos en la base de datos #### 
 @app.route('/create')
 def create():
     return render_template('create.html')
+
+#### Creacion de regitros en la base de datos de Sitios ####
 
 @app.route('/store', methods=['POST'])
 def store():
@@ -60,6 +70,18 @@ def site_list():
     conn.commit()
 
     return render_template('site_list.html', lista=lista )
+
+#### Borrara registras de la base de datos desde el sitio /site_list ####
+
+@app.route('/borrar/<int:id>')
+def borrar(id):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM site WHERE id=%s",(id))
+
+    conn.commit()
+
+    return redirect('/site_list')
 
 '''
 @app.route('/noregister')
