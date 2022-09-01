@@ -22,4 +22,4 @@ def gettoken(): # Función que captura el token para almacenarlo en la variable 
 
 valer = gettoken()
 
-print(valer)
+# print(valer)

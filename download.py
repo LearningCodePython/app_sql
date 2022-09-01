@@ -13,7 +13,7 @@ mytoken = take_token.gettoken()
 # El post inicial seria asi POST /api/v1.1.0/cdr/get_random?token={token}
 
 token_random = 0
-extid = input("Cual es la extensión?. ")
+extid = input("Cual es la extensión? 'all' para elegir todas. ")
 f_inicio = input("Fecha de inicio de la busqueda AAAA-MM-DD: ")
 f_fin = input("Fecha de inicio de la busqueda AAAA-MM-DD: ")
 starttime = (f"{f_inicio} 00:00:00")
@@ -53,7 +53,7 @@ mydb = mysql.connector.connect(
     host = 'localhost',
     user = 'root',
     password = 'ptoorp',
-    database = 'valleorotava'
+    database = 'contel'
 )
 cursor=mydb.cursor()
 

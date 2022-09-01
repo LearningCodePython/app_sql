@@ -4,10 +4,11 @@
 # Toma de datos (variables ) que dependen del lugar al que te conectes.
 
 
-host = "172.16.3.2" #Dania
-api_pass = "\"b73456e5859db8bbf2f74a586693c492\"" # Dania
-# host = "192.168.0.45" #Contel
-# api_pass = "\"6b0e4416872b14b0214416825910c718\"" # Contel
+# host = "172.16.3.2" #Dania
+#api_pass = "\"b73456e5859db8bbf2f74a586693c492\"" # Dania
+# CONTEL.
+host = "192.168.0.45" #Contel
+api_pass = "\"6b0e4416872b14b0214416825910c718\"" # Contel
 
 # host_heartbeat = "10.16.16.16:8260/report" #Pruebas Contel
 api_user = "\"api\""
