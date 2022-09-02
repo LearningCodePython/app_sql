@@ -1,3 +1,11 @@
+# Este programa utiliza la escructura creada en funciones_db.py para...
+# Pirmero hacer una consulta al usuario de manera que cree un filtro de extensión " 'all' si quiere todas" y fecha.
+# Seguundo almacena el requests en un ficharo CSV
+# Tercero Parsea el CSV y elimina la primera linea o emcabezado.
+# Cuarto Se conecta al servidor SQL
+# Quinto Recorreo el CVS parseado y hace un INSERT en la base de datos
+# Sexto elimia los ficheros CSV almacenados en la carpeta /csv
+
 import requests
 import mysql.connector
 import csv
@@ -38,6 +46,7 @@ link_download = "https://" + data.host + ":8088/api/v1.1.0/cdr/download?extid=" 
 r = requests.get(link_download, allow_redirects=True, verify=False)
 open ('csv/datos.csv', 'wb').write(r.content)
 
+
 ## Procesado del fichero CSV ##
 # 1º se Lee el fichero datos.csv y se abre el fichero outpyt.csv en modo escritura
 # 2º se salta la primera liena de datos.csv con la orden 'next(file)
@@ -57,7 +66,7 @@ mydb = mysql.connector.connect(
 )
 cursor=mydb.cursor()
 
-# Recoger los datos del csv y pasarlos a la base de datos ya creada "contel" dentro de la tabla "llamadas".
+# Recoger los datos del csv y pasarlos a la base de datos ya creada "contel" dentro de la tabla "llamadas". 
 
 with open('csv/output.csv', newline='') as csvfile:
     csv_data = csv.reader(csvfile, delimiter=',', quotechar='|')
@@ -73,4 +82,3 @@ os.remove('csv/output.csv')
 
 # Un vez que esta la información almacenada en la base de datos, pasamos a hacerle consultas.
 # Ademas es buena opcion integrar esta parte del programa con la app.web
-

@@ -11,6 +11,7 @@ cursor=mydb.cursor()
 database_name = ""
 table_name =""
 
+
 def create_database(value):
     cursor.execute(f'CREATE DATABASE {value}')
     global database_name
@@ -22,7 +23,7 @@ def create_table(table):
     cursor.execute(f'CREATE TABLE {table}\
     (id INT AUTO_INCREMENT PRIMARY KEY,\
     callid VARCHAR (50),\
-    timestart VARCHAR (50),\
+    timestart datetime,\
     callfrom VARCHAR (50),\
     callto VARCHAR (50),\
     callduraction VARCHAR (50),\
@@ -32,7 +33,7 @@ def create_table(table):
     status VARCHAR (50),\
     type VARCHAR (50),\
     pincode VARCHAR (50),\
-    recording VARCHAR (50),\
+    recording VARCHAR (100),\
     didnumber VARCHAR (50),\
     sn VARCHAR (50))')
 
